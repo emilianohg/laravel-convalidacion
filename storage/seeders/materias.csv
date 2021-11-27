@@ -1,0 +1,494 @@
+materia	creditos	carrera_id
+calculo diferencial	5	ISIC
+calculo integral	5	ISIC
+calculo vectorial	5	ISIC
+ecuaciones diferenciales	5	ISIC
+graficacion	4	ISIC
+lenguajes y automatas 1	5	ISIC
+lenguajes y automatas 2	5	ISIC
+programacion logica y funcional	4	ISIC
+inteligencia artificial	4	ISIC
+fundamentos de programacion	5	ISIC
+programacion orientada a objetos	5	ISIC
+estructura de datos	5	ISIC
+metodos numericos	4	ISIC
+fundamentos de telecomunicaciones	4	ISIC
+redes de computadoras	5	ISIC
+conmutacion y enrutamiento en redes de datos	5	ISIC
+administracion de redes	4	ISIC
+taller de etica	4	ISIC
+contabilidad financiera	4	ISIC
+cultura empresarial	4	ISIC
+topicos avanzados de programacion	5	ISIC
+sistemas operativos	4	ISIC
+taller de sistemas operativos	4	ISIC
+taller de investigacion 1	4	ISIC
+taller de investigacion 2	4	ISIC
+matematicas discretas	5	ISIC
+quimica	4	ISIC
+investigacion de operacioness	4	ISIC
+fundamentos de base de datos	5	ISIC
+taller de base de datos	4	ISIC
+administracion de base der datos	5	ISIC
+taller de administracion 	4	ISIC
+algebra lineal 	5	ISIC
+desarrollo sustentable	5	ISIC
+simulacion	5	ISIC
+fundamentos de ingenieria de software	4	ISIC
+ingenieria de software	5	ISIC
+gestion de proyectos de software	6	ISIC
+programacion web	5	ISIC
+fundamentos de investigacion	4	ISIC
+probabilidad y estadistica	5	ISIC
+fisica general	5	ISIC
+principios electricos y aplicaciones digitales	5	ISIC
+arquitectura de computadoras	5	ISIC
+lenguajes de interfaz	4	ISIC
+sistemas programables	4	ISIC
+Química inorganica	5	IAMB
+fundamentos de quimica organica	5	IAMB
+quimica analitica	6	IAMB
+analisis intrumental	5	IAMB
+fenomenos de transporte	5	IAMB
+taller de investigacion 1	4	IAMB
+taller de investigacion 2	4	IAMB
+seguridad e higiene industrial	4	IAMB
+calculo diferencial	5	IAMB
+algebra lineal 	5	IAMB
+calculo vectorial	5	IAMB
+ecuaciones diferenciales	5	IAMB
+sistemas de informacion geografica	4	IAMB
+contaminacion atmosferica	5	IAMB
+fundamentos de aguas residuales	6	IAMB
+dibujo asistido por computadora	4	IAMB
+fisica 	5	IAMB
+diseño de expérimentos ambientales	4	IAMB
+balance de materia y energia	5	IAMB
+gestion ambiental 1	5	IAMB
+gestion ambiental 2	4	IAMB
+evaluacion de impacto ambiental	5	IAMB
+formulacion y evaluacion de proyectos	5	IAMB
+taller de etica	4	IAMB
+probabilidad y estadistica ambiental	5	IAMB
+termodinamica	5	IAMB
+desarrollo sustentable	5	IAMB
+mecanica de fluidos	5	IAMB
+ingenieria de costos	4	IAMB
+fundamentos de investigacion	4	IAMB
+calculo integral	5	IAMB
+economia ambiental	3	IAMB
+fisioquimica 1	5	IAMB
+fisioquimica 2	5	IAMB
+gestion de residuos	6	IAMB
+remediacion de suelos	6	IAMB
+biologia	5	IAMB
+ecologia	5	IAMB
+bioquimica	6	IAMB
+microbiologia	6	IAMB
+toxicologia ambiental	5	IAMB
+componentes de equipo industral	5	IAMB
+fundamentos de investigacion	4	IBQA
+administracion y legislacion de empresas	3	IBQA
+calculo vectorial	5	IBQA
+programacion y metodos numericos	5	IBQA
+ingenieria economica	3	IBQA
+operaciones unitarias 1	6	IBQA
+taller de investigacion 2	4	IBQA
+ingenieria de proyectos	4	IBQA
+formulacion y evaluacion de proyectos	5	IBQA
+calculo diferencial	5	IBQA
+calculo integral	5	IBQA
+ecuaciones diferenciales	5	IBQA
+electromagnetismo	5	IBQA
+fenomenos de transporte 1	6	IBQA
+fenomenos de transporte 2	6	IBQA
+opereciones unitarias 3	6	IBQA
+ingenieria y gestion ambiental	5	IBQA
+quimica	5	IBQA
+quimica organica 1	5	IBQA
+quimica organica 2	5	IBQA
+bioquimica	6	IBQA
+bioquimica del nitrogeno y regulacion genetica	6	IBQA
+microbiologia	6	IBQA
+opereciones unitarias 2	6	IBQA
+ingenieria de procesos	5	IBQA
+taller de etica	4	IBQA
+biologia	5	IBQA
+termodinamica	5	IBQA
+balance de materia y energia	5	IBQA
+fisioquimica	5	IBQA
+seguridad e higiene	2	IBQA
+ingenieria de biorreactores	5	IBQA
+comportamiento organizacional	2	IBQA
+quimica analitica	6	IBQA
+fisica	5	IBQA
+analisis intrumental	5	IBQA
+desarrollo sustentable	5	IBQA
+cinetica quimica y biologica	5	IBQA
+dibujo asistido por computadora	3	IBQA
+algebra lineal 	5	IBQA
+estadistica	5	IBQA
+aseguramiento de la calidad	3	IBQA
+instrumentacion y control	5	IBQA
+taller de investigacion 1	4	IBQA
+calculo diferencial	5	IELE
+calculo integral	5	IELE
+calculo vectorial	5	IELE
+ecuaciones diferenciales	5	IELE
+control 1	5	IELE
+control 2	5	IELE
+control de maquinas electricas	5	IELE
+costos y presupuesto de proyecto	4	IELE
+quimica	4	IELE
+mecanica clasica	5	IELE
+algebra lineal 	5	IELE
+fisica moderna	3	IELE
+equipos mecanicos	4	IELE
+legislacion en materia electrica	3	IELE
+modelado de sistemas electricos de potencia	5	IELE
+gestion empresarial y liderezago	3	IELE
+probabilidad y estadistica	4	IELE
+electromagnetismo	5	IELE
+circuitos electricos 1	6	IELE
+circuitos electricos 2	6	IELE
+transformadores	5	IELE
+maquinas sincronicas y de CD	5	IELE
+centrales electricas	4	IELE
+controlador logico programable	5	IELE
+desarrollo humano integral	3	IELE
+mediciones electricas	5	IELE
+programacion	4	IELE
+electronica analogica	5	IELE
+electronica digital	4	IELE
+motores de induccion y especiales	5	IELE
+electronica industrial 	5	IELE
+pruebas y mantenimiento electrico	5	IELE
+fundamentos de investigacion	4	IELE
+dibujo asistido por computadora	4	IELE
+mecanica de fluidos y termodinamica	5	IELE
+teoria electromagnetica	4	IELE
+instalaciones electricas	4	IELE
+instalaciones electricas industriales	5	IELE
+instrumentacion 	5	IELE
+sistemas de iluminacion	4	IELE
+taller de etica	4	IELE
+tecnologia de los materiales	3	IELE
+comunicación humana	3	IELE
+metodos numericos	4	IELE
+desarrollo sustentable	5	IELE
+taller de investigacion 1	4	IELE
+taller de investigacion 2	4	IELE
+quimica	5	IENR
+bioquimica	5	IENR
+microbiologia	5	IENR
+resistencia a meteriales	5	IENR
+biocombustibles	5	IENR
+taller de investigacion 1	4	IENR
+sistemas solares fotovoltaicos y termicos	5	IENR
+formulacion y evaluacion de proyectos de energias renovables	4	IENR
+programacion	4	IENR
+electromagnetismo	5	IENR
+taller de sistemas de informacion geografica	5	IENR
+termodinamica	5	IENR
+marco juridico en gestion energetica	3	IENR
+maquinas electricas	5	IENR
+simulacion de sistemas de energias renovables	4	IENR
+administracion y tecnicas de conservacion	4	IENR
+calculo diferencial	5	IENR
+algebra lineal 	5	IENR
+tecnologia e ingenieria de materiales	5	IENR
+comportamiento humano en las organizaciones	4	IENR
+desarrollo sustentable	5	IENR
+maquinas hidraulicas	5	IENR
+instrumentacion	5	IENR
+auditoria energetica	3	IENR
+fundamentos de investigacion	4	IENR
+calculo integral	5	IENR
+estatica y dinamica	5	IENR
+optica y semiconductores	5	IENR
+mecanica de fluidos	5	IENR
+refrigeracion y aire acondicionado	5	IENR
+energia eolica 	5	IENR
+gestion de empresas de energias renovables	4	IENR
+dibujo	4	IENR
+taller de etica	4	IENR
+calculo vectorial	5	IENR
+ecuaciones diferenciales	5	IENR
+transferencia de calor	5	IENR
+instalaciones electricas e iluminacion	5	IENR
+taller de investigacion 2	4	IENR
+fuentes renovables de energia 	5	IENR
+estadistica de diseño y experimentos	5	IENR
+metrologia mecanica y electrica	5	IENR
+circuitos electricos 1	5	IENR
+circuitos electricos 2	5	IENR
+sistemas termicos	5	IENR
+calculo diferencial	5	IELC
+calculo integral	5	IELC
+calculo vectorial	5	IELC
+ecuaciones diferenciales	5	IELC
+circuitos electricos 2	5	IELC
+control 1	5	IELC
+control 2	5	IELC
+control digital	5	IELC
+desarrollo y evaluacion de proyectos	3	IELC
+mecanica clasica	5	IELC
+probailidad y estadistica	4	IELC
+electromagnetismo	5	IELC
+circuitos electricos 1	5	IELC
+diodos y transitores	5	IELC
+diseño con transitores	5	IELC
+amplificadores operacionales	5	IELC
+controladores logico programable	5	IELC
+quimica	4	IELC
+desarrollo sustentable	5	IELC
+algebra lineal 	5	IELC
+marco legal de la empresa	3	IELC
+teoria electromagnetica	5	IELC
+fundamentos financieros	3	IELC
+instrumentacion	5	IELC
+electronica de potencia	5	IELC
+taller de etica	4	IELC
+mediciones electricas	5	IELC
+fisica de semiconductores	5	IELC
+analisis numerico	5	IELC
+maquinas electricas	5	IELC
+microcontroladores	5	IELC
+optoelectronica	5	IELC
+administracion gerencial	3	IELC
+fundamentos de investigacion	4	IELC
+topicos selectos de fisica	5	IELC
+programacion estruturada	5	IELC
+diseño digital	5	IELC
+diseño digital con VHDL	5	IELC
+taller de investigacion 1	4	IELC
+introduccion a las telecomunicaciones	5	IELC
+comunicación humana	3	IELC
+desarrollo humano 	3	IELC
+programacion visual	5	IELC
+desarrollo profesional	3	IELC
+taller de investigacion 2	4	IELC
+fundamentos de investigacion	4	IGEM
+software de aplicación ejecutivo	5	IGEM
+marco legal de las organizaciones	4	IGEM
+ingenieria economica	5	IGEM
+finanzas en las organizaciones	5	IGEM
+administracion de la salud y la seguridad ocupacional	5	IGEM
+calidad aplicada a la gestion empresarial	5	IGEM
+calculo diferencial	5	IGEM
+calculo integral	5	IGEM
+probabilidad y estadistica descriptiva	5	IGEM
+estadistica inferencial 1	6	IGEM
+estadistica inferencial 2	6	IGEM
+el emprendedor y la innovacion	5	IGEM
+plan de negocios	5	IGEM
+desarrollo humano	4	IGEM
+contabilidad orientada a los negocios	5	IGEM
+costos empresariales	5	IGEM
+instrumentos de presupuestacion empresarial	5	IGEM
+ingenieria de procesos	5	IGEM
+gestion de la produccion 1	4	IGEM
+gestion de la produccion 2	4	IGEM
+cadena de suministros	5	IGEM
+fundamentos de gestion empresarial	5	IGEM
+dinamica social	4	IGEM
+habilidades directivas 1	4	IGEM
+habilidades directivas 2	4	IGEM
+gestion del capital humano	6	IGEM
+diseño organizacional	5	IGEM
+gestion estrategica	5	IGEM
+fundamentos de fisica	4	IGEM
+taller de etica	4	IGEM
+economia empresarial	5	IGEM
+entorno macroeconomico	5	IGEM
+taller de investigacion 1	4	IGEM
+taller de investigacion 2	4	IGEM
+desarrollo sustentable	5	IGEM
+fundamentos de quimica	5	IGEM
+legislacion laboral	4	IGEM
+algebra lineal 	5	IGEM
+investigacion de operacioness	5	IGEM
+mercadotecnia	5	IGEM
+sistemas de informacion de mercadotecnia	5	IGEM
+mercadotecnia electronica	5	IGEM
+dibujo mecanico	5	IMEC
+probabilidad y estadistica	4	IMEC
+estatica	5	IMEC
+mecanica de materiales 1	5	IMEC
+mecanica de materiales 2	5	IMEC
+diseño mecanico 1	5	IMEC
+diseño mecanico 2	5	IMEC
+mantenimiento	4	IMEC
+calculo diferencial	5	IMEC
+calculo integral	5	IMEC
+calculo vectorial	5	IMEC
+ecuaciones diferenciales	5	IMEC
+mecanismos	5	IMEC
+vibraciones mecanicas	5	IMEC
+higiene y seguridad industrial	3	IMEC
+sistema de generacion de energia	5	IMEC
+metrologia y normalizacion	4	IMEC
+algebra lineal 	5	IMEC
+calidad	4	IMEC
+dinamica	5	IMEC
+termodinamica	5	IMEC
+transferencia de calor	5	IMEC
+maquinas de fluidos comprensibles	4	IMEC
+refrigeracion y aire acondicionado	5	IMEC
+quimica	4	IMEC
+ingenieria de materiales metalicos	5	IMEC
+ingenieria de materiales no metalicos	5	IMEC
+procesos de manufactura	5	IMEC
+mecanica de fluidos 	4	IMEC
+sistemas e instalaciones hidraulicas	5	IMEC
+maquina de fluidos incomprensibles	5	IMEC
+gestion de proyectos	4	IMEC
+taller de etica	4	IMEC
+algoritmos y programacion	4	IMEC
+electromagnetismo	5	IMEC
+sistemas electronicos	5	IMEC
+circuitos y maquinas electricas 	5	IMEC
+instrumentacion y control	5	IMEC
+automatizacion industrial	5	IMEC
+fundamentos de investigacion	4	IMEC
+procesos administrativo	3	IMEC
+contabilidad y costos	3	IMEC
+metodos numericos	4	IMEC
+desarrollo sustentable	5	IMEC
+taller de investigacion 1	4	IMEC
+taller de investigacion 2	4	IMEC
+fundamentos de investigacion	4	IIND
+electricidad y electronica industrial	4	IIND
+procesos de fabricacion	4	IIND
+administrativo de proyectos	3	IIND
+taller de investigacion 1	4	IIND
+taller de investigacion 2	4	IIND
+formulacion y evaluacion de proyectos	5	IIND
+taller de etica	4	IIND
+propiedades de los materiales	4	IIND
+algebra lineal 	5	IIND
+fisica	4	IIND
+gestion de costos	4	IIND
+ingenieria economica	4	IIND
+planeacion financiera	4	IIND
+relaciones industriales	4	IIND
+calculo diferencial	5	IIND
+calculo integral	5	IIND
+calculo vectorial	5	IIND
+algoritmos y lenguajes programables	4	IIND
+administracion de las operaciones 1	4	IIND
+administracion de las operaciones 2	4	IIND
+planeacion y diseño de instalaciones	4	IIND
+taller de herramientas intelectuales 	4	IIND
+probabilidad y estadistica	4	IIND
+economia	4	IIND
+investigacion de operaciones 1	4	IIND
+investigacion de operaciones 2	4	IIND
+simulacion	4	IIND
+sistema de manufactura	5	IIND
+quimica	4	IIND
+analisis de la realidad nacional	3	IIND
+estadisticas inferencial 1	5	IIND
+estadisticas inferencial 2	5	IIND
+controlo estadistico de la calidad	5	IIND
+administracion del mantenimiento	4	IIND
+logitsticas y cadenas de suministro	4	IIND
+dibujo industrial 	6	IIND
+taller de liderezgo	4	IIND
+estudio del trabajo 1	6	IIND
+estudio del trabajo 2	6	IIND
+ergonomia	5	IIND
+mercadotecnia	5	IIND
+gestion de los sistemas de calidad	4	IIND
+higiene y seguridad industrial	5	IIND
+desarrollo sustentable	5	IIND
+ingenieria de sistemas	3	IIND
+quimica	4	IMCT
+calculo integral	5	IMCT
+calculo vectorial	5	IMCT
+ecuaciones diferenciales	5	IMCT
+maquinas electricas	5	IMCT
+electronica de potencia aplicada	6	IMCT
+dinamica de sistemas	5	IMCT
+control	6	IMCT
+robotica	5	IMCT
+calculo diferencial	5	IMCT
+algebra lineal 	5	IMCT
+procesos de fabricacion	4	IMCT
+fundamentos de termodinamica	4	IMCT
+electronica analogica	6	IMCT
+instrumentacion	5	IMCT
+manufactura avanzada	5	IMCT
+formulacion y evaluacion de proyectos	3	IMCT
+taller de etica	4	IMCT
+ciencias e ingenieria de materiales	5	IMCT
+electromagnetismo	5	IMCT
+mecanica de materiales	6	IMCT
+mecanismos	5	IMCT
+diseño de elementos mecanicos	5	IMCT
+circuitos hidrahulicos y nuematicos	6	IMCT
+controladores logico programable	5	IMCT
+dibujo asistido por computadora	4	IMCT
+programacion basica	5	IMCT
+estatica	4	IMCT
+dinamica	4	IMCT
+analisis de fluidos	4	IMCT
+electronica digital	5	IMCT
+mantenimiento	5	IMCT
+metrologia y normalizacion	4	IMCT
+estadistica y control de calidad	4	IMCT
+metodos numericos	4	IMCT
+analisis de circuitos electricos	6	IMCT
+taller de investigacion 1	4	IMCT
+vibraciones mecanicas	5	IMCT
+microcontroladores	5	IMCT
+fundamentos de investigacion	4	IMCT
+administracion y contabilidad	4	IMCT
+desarrollo sustentable	5	IMCT
+taller de investigacion 2	4	IMCT
+programacion avanzada	6	IMCT
+calculo diferencial	5	ITIC
+calculo integral	5	ITIC
+matematicas aplicadas a comunicaciones	4	ITIC
+analisis de señales y sistemas de comunicación	5	ITIC
+telecomunicaciones	5	ITIC
+redes emergentes	5	ITIC
+administracion y seguridad de redes	5	ITIC
+fundamentos de programacion	5	ITIC
+programacion orientada a objetos	5	ITIC
+estructura y organización de datos	5	ITIC
+programacion 2	5	ITIC
+administracion de proyectos	5	ITIC
+desarrollo de aplicaciones para dispositivos moviles	5	ITIC
+auditoria en tecnologias de la informacion	4	ITIC
+matematicas discretas 1 	5	ITIC
+matematicas discretas 2	5	ITIC
+matermaticas para la toma de decisiones	5	ITIC
+fundamentos de redes	5	ITIC
+redes de computadoras	5	ITIC
+desarrollo de emprendedores	5	ITIC
+taller de investigacion 1	4	ITIC
+taller de investigacion 2	4	ITIC
+instroduccion a las tics 	3	ITIC
+algebra lineal 	5	ITIC
+fundamentos de base de datos	5	ITIC
+taller de base de datos	4	ITIC
+base de datos distribuidas	5	ITIC
+sistemas operativos 1	4	ITIC
+sistemas operativos 2	5	ITIC
+ingenieria del conocimiento	4	ITIC
+taller de etica	4	ITIC
+probabilidad y estadistica	5	ITIC
+electricidad y magnetismo	4	ITIC
+circuitos electricos y electronimos	5	ITIC
+arquitectura de computadoras	4	ITIC
+desarrollo sustentable	5	ITIC
+negocios electronicos 1	4	ITIC
+negocios electronicos 2	4	ITIC
+fundamentos de investigacion	4	ITIC
+contabilidad y costos	5	ITIC
+administracion gerencial	4	ITIC
+ingenieria de software	4	ITIC
+taller de investigacion de software	4	ITIC
+tecnologias inalambricas	4	ITIC
+interaccion humano computadora	4	ITIC

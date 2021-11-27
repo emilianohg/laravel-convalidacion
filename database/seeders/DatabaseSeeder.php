@@ -4,8 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-use App\Models\User;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -18,6 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             RolSeeder::class,
             InstitutoConfigurationSeeder::class,
+            CoordinadoresSeeder::class,
+            StatusSeeder::class,
         ]);
     }
 }

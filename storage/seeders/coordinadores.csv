@@ -1,13 +1,12 @@
-nombre,carrera,correo
-Jessica Guadalupe Beltrán Ramírez,Coordinadora de Ingeniería Ambiental y Bioquímica,coordbioquimica@itculiacan.edu.mx
-Eliseo Juárez López,"Coordinador de Ingeniería Eléctrica, Electrónica y Energías Renovables",coordinacion.ieer@culiacan.tecnm.mx
-Guillermo Beltrán Morales,Coordinador de Ingeniería en Gestión Empresarial,coordinadorige@itculiacan.edu.mx
-Gabriela Sánchez Angulo,Coordinadora de Ingeniería Industrial,coorindustrial@itculiacan.edu.mx
-Segundo Castañeda Gallo,Coordinador de Ingeniería Mecánica,coormecanica@itculiacan.edu.mx
-Everd Luis Cázares Domínguez,Coordinador de Ingeniería Mecatrónica,coormecatronica@itculiacan.edu.mx
-Edna Rocío Barajas Olivas,Coordinadora de Ingeniería en Sistemas Computacionales y TIC,coorsistemas@itculiacan.edu.mx
-Gloria Ekaterine Peralta Peñúñuri,Coordinadora de la Maestría en Ciencias de la Computación,coordinadormcc@culiacan.tecnm.mx
-Juan Pedro Campos Sauceda,Coordinador de la Maestría en Ciencias de la Ingeniería,coordinadormci@culiacan.tecnm.mx
-Juan Carlos Cabanillas Noris,Coordinador del Doctorado en Ciencias de la Ingeniería,coordinadordci@itculiacan.edu.mx
-Juan Enrique Palacios Quintero,Coordinador de la Extensión Navolato,cnavolato@culiacan.tecnm.mx
-Ivette Sarahí Sandoval Solano,Coordinadora del Centro de Lenguas Extranjeras,leng_culiacan@tecnm.mx
+nombre,carrera_id,correo
+Jessica Guadalupe Beltrán Ramírez,IAMB,coordbioquimica@itculiacan.edu.mx
+Jessica Guadalupe Beltrán Ramírez,IBQA,coordbioquimica@itculiacan.edu.mx
+Eliseo Juárez López,IELE,coordinacion.ieer@culiacan.tecnm.mx
+Eliseo Juárez López,IELC,coordinacion.ieer@culiacan.tecnm.mx
+Eliseo Juárez López,IENR,coordinacion.ieer@culiacan.tecnm.mx
+Guillermo Beltrán Morales,IGEM,coordinadorige@itculiacan.edu.mx
+Gabriela Sánchez Angulo,IIND,coorindustrial@itculiacan.edu.mx
+Segundo Castañeda Gallo,IMEC,coormecanica@itculiacan.edu.mx
+Everd Luis Cázares Domínguez,IMCT,coormecatronica@itculiacan.edu.mx
+Edna Rocío Barajas Olivas,ISIC,coorsistemas@itculiacan.edu.mx
+Edna Rocío Barajas Olivas,ITIC,coorsistemas@itculiacan.edu.mx
