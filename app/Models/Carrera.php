@@ -12,6 +12,8 @@ class Carrera extends Model
 
     protected $primaryKey = 'carrera_id';
 
+    public $incrementing = false;
+
     protected $fillable = ['carrera_id', 'nombre', 'instituto_id'];
 
     public $timestamps = false;
