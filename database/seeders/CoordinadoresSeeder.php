@@ -19,7 +19,7 @@ class CoordinadoresSeeder extends Seeder
             ->setHeaderOffset(0);
 
         DB::table('coordinadores')->delete();
-        User::query()->delete();
+        User::query()->where('rol_id', '=', 'coordinador')->delete();
 
         $coordinadoresRegistrados = [];
 

@@ -2,19 +2,50 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CrearSolicitudRequest;
+use App\Models\Adeudo;
+use App\Models\Alumno;
+use App\Models\Carrera;
 use App\Models\Solicitud;
 use App\Models\SolicitudHistorial;
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class SolicitudesController extends Controller
 {
     public function index(Request $request): JsonResponse
     {
+        $user = User::query()->find(auth()->id());
 
         $carreraId  = $request->get('carrera_id');
         $statusId   = $request->get('status_id');
+
+        if ($user->rol_id == 'coordinador') {
+
+            if ($carreraId == null) {
+                return response()->json([
+                    'message' => 'Un coordinador necesita especificar la carrera que busca'
+                ], 422);
+            }
+
+            $carreaDeCoordinador = Carrera::query()
+                ->select([
+                    'coordinadores.usuario_id',
+                    'carreras.*',
+                ])
+                ->select()
+                ->join('coordinadores', 'carreras.carrera_id', '=', 'coordinadores.carrera_id')
+                ->where('coordinadores.usuario_id', '=', $user->id)
+                ->where('coordinadores.carrera_id', '=', $carreraId)
+                ->first();
+
+            if ($carreaDeCoordinador == null) {
+                return response()->json([
+                    'message' => 'El coordinador no tiene permiso de acceder a las solicitudes de la carrera especificada'
+                ], 422);
+            }
+        }
 
         $queryBuilder = Solicitud::query()
             ->select([
@@ -41,11 +72,11 @@ class SolicitudesController extends Controller
             });
 
         if ($carreraId != null) {
-            $queryBuilder->where('carrera_id', '=', $carreraId);
+            $queryBuilder->where('carrera_cursada.carrera_id', '=', $carreraId);
         }
 
         if ($statusId != null) {
-            $queryBuilder->where('status_id', '=', $statusId);
+            $queryBuilder->where('solicitudes.status_id', '=', $statusId);
         }
 
         $solicitudes = $queryBuilder->paginate();
@@ -87,8 +118,55 @@ class SolicitudesController extends Controller
         return response()->json($solicitud);
     }
 
-    public function store(Request $request) {
-        
+    public function store(CrearSolicitudRequest $request): JsonResponse
+    {
+        $userId = auth()->id();
+        $alumno = Alumno::query()->where('usuario_id', '=', $userId)->first();
+        $statusId = 'registrada';
+
+        $carreraId = $request->get('carrera_id');
+
+        $solicitudExistente = Solicitud::query()
+            ->where('numero_control', '=', $alumno->numero_control)
+            ->first();
+
+        $adeudos = Adeudo::query()
+            ->where('numero_control', '=', $alumno->numero_control)
+            ->get();
+
+        if ($adeudos != null and count($adeudos) > 0) {
+            return response()->json([
+                'message' => 'No puedes solicitar una convalidación de estudios si cuentas con adeudos',
+                'cause' => [
+                    'adeudos' => $adeudos,
+                ],
+            ]);
+        }
+
+        if ($solicitudExistente != null) {
+            return response()->json([
+                'message'   => 'Ya tienes una solicitud de convalidación creada',
+                'cause'     => [
+                    'solicitud' => $solicitudExistente,
+                ],
+            ],422);
+        }
+
+        $solicitud = Solicitud::query()->create([
+            'carrera_id'        => $carreraId,
+            'numero_control'    => $alumno->numero_control,
+            'status_id'         => $statusId,
+        ]);
+
+        SolicitudHistorial::query()->create([
+            'solicitud_id' => $solicitud->solicitud_id,
+            'usuario_id'    => $alumno->usuario_id,
+            'status_id'     => $statusId,
+            'fecha'         => now(),
+            'comentario'    => null,
+        ]);
+
+        return response()->json($solicitud);
     }
 
 

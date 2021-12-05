@@ -1,0 +1,4 @@
+GET http://localhost:8000/api/solicitudes?carrera_id=ISIC
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|IPAUd9TCr6liAM3VP8jeYaDnZgOUw2SuzWgI0W2G

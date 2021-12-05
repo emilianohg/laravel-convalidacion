@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -49,8 +50,34 @@ class AlumnosController extends Controller
         return response()->json($alumnos);
     }
 
+    public function me(): JsonResponse
+    {
+        $user = User::query()->find(auth()->id());
+        if ($user->rol_id != 'alumno') {
+            return response()->json([
+                'message'   => 'No eres un alumno',
+            ],422);
+        }
+
+        $alumnoPorUsuarioId = Alumno::where('usuario_id', '=', auth()->id())->first();
+
+        return $this->show($alumnoPorUsuarioId->numero_control);
+
+    }
+
     public function show($numeroControl): JsonResponse
     {
+        $user = User::query()->find(auth()->id());
+        if ($user->rol_id == 'alumno') {
+            $alumnoPorUsuarioId = Alumno::where('usuario_id', '=', auth()->id())->first();
+
+            if ($alumnoPorUsuarioId->numero_control != $numeroControl) {
+                return response()->json([
+                    'message'   => 'No puedes acceder a los datos de otro alumno',
+                ],422);
+            }
+        }
+
         $columns = [
             'alumnos.usuario_id',
             'alumnos.numero_control',
