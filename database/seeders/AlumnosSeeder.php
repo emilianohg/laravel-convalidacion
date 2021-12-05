@@ -24,6 +24,7 @@ class AlumnosSeeder extends Seeder
                     return [
                         'numero_control'    => $alumno->numero_control,
                         'asignatura_id'     => $asignatura->asignatura_id,
+                        'calificacion'      => rand(70, 100),
                     ];
                 })
                 ->toArray();

@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             StatusSeeder::class,
             AlumnosSeeder::class,
             AdeudosSeeder::class,
+            SolicitudesSeeder::class,
         ]);
     }
 }
