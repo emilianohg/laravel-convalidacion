@@ -5,6 +5,7 @@ use App\Http\Controllers\AsignaturasController;
 use App\Http\Controllers\CarrerasController;
 use App\Http\Controllers\CoordinadoresController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\SolicitudesController;
 
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('solicitudes', [SolicitudesController::class, 'index']);
     Route::post('solicitudes', [SolicitudesController::class, 'store']);
     Route::get('solicitudes/{solicitud_id}', [SolicitudesController::class, 'show']);
+    Route::post('logout', LogoutController::class);
 });
 
 Route::post('login', LoginController::class);

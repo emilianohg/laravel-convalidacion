@@ -1,3 +1,4 @@
 GET http://localhost:8000/api/carreras
 Accept: application/json
 Content-Type: application/json
+Authorization: Bearer 5|jlFQrjoh357DDBwv2hnIYzeLZ4YIY4KDKiCvehw9

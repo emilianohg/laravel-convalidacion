@@ -11,6 +11,7 @@ use App\Models\SolicitudHistorial;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SolicitudesController extends Controller
 {
@@ -18,33 +19,40 @@ class SolicitudesController extends Controller
     {
         $user = User::query()->find(auth()->id());
 
-        $carreraId  = $request->get('carrera_id');
+        $carrerasId = $request->get('carreras_id');
         $statusId   = $request->get('status_id');
+        $search     = $request->get('search');
 
-        if ($user->rol_id == 'coordinador') {
+        if ($carrerasId != null) {
+            $carrerasId = explode(',', $carrerasId);
+        }
 
-            if ($carreraId == null) {
-                return response()->json([
-                    'message' => 'Un coordinador necesita especificar la carrera que busca'
-                ], 422);
-            }
+        if ($user->rol_id == 'coordinador' && $carrerasId != null) {
 
-            $carreaDeCoordinador = Carrera::query()
+            $totalCarrerasDeCoordinador = Carrera::query()
                 ->select([
                     'coordinadores.usuario_id',
                     'carreras.*',
                 ])
-                ->select()
                 ->join('coordinadores', 'carreras.carrera_id', '=', 'coordinadores.carrera_id')
                 ->where('coordinadores.usuario_id', '=', $user->id)
-                ->where('coordinadores.carrera_id', '=', $carreraId)
-                ->first();
+                ->whereIn('coordinadores.carrera_id', $carrerasId)
+                ->count();
 
-            if ($carreaDeCoordinador == null) {
+            if ($totalCarrerasDeCoordinador != count($carrerasId)) {
                 return response()->json([
-                    'message' => 'El coordinador no tiene permiso de acceder a las solicitudes de la carrera especificada'
+                    'message' => 'El coordinador no tiene permiso de acceder a las solicitudes de una carrera especificada'
                 ], 422);
             }
+
+        }
+
+        if ($user->rol_id == 'coordinador' && $carrerasId == null) {
+            $carrerasId = DB::table('coordinadores')
+                ->where('coordinadores.usuario_id', '=', $user->id)
+                ->get()
+                ->map(fn ($coordinador) => $coordinador->carrera_id)
+                ->toArray();
         }
 
         $queryBuilder = Solicitud::query()
@@ -61,22 +69,30 @@ class SolicitudesController extends Controller
                 'solicitudes_historial.fecha as fecha_registro',
             ])
             ->join('alumnos', 'solicitudes.numero_control', '=', 'alumnos.numero_control')
-            ->join('usuarios', 'alumnos.usuario_id', '=', 'alumnos.usuario_id')
+            ->join('usuarios', 'alumnos.usuario_id', '=', 'usuarios.id')
             ->join('planes_estudio', 'alumnos.plan_estudio_id', '=', 'planes_estudio.clave')
             ->join('carreras as carrera_convalidar', 'solicitudes.carrera_id', '=', 'carrera_convalidar.carrera_id')
             ->join('carreras as carrera_cursada', 'planes_estudio.carrera_id', '=', 'carrera_cursada.carrera_id')
             ->join('status', 'solicitudes.status_id', '=', 'status.status_id')
             ->join('solicitudes_historial', function ($join) {
                 $join->on('solicitudes_historial.solicitud_id', '=', 'solicitudes.solicitud_id')
-                    ->where('solicitudes_historial.status_id', '=', 'registrada');
+                    ->where('solicitudes_historial.status_id', '=', 'pendiente');
             });
 
-        if ($carreraId != null) {
-            $queryBuilder->where('carrera_cursada.carrera_id', '=', $carreraId);
+        if ($carrerasId != null) {
+            $queryBuilder->whereIn('carrera_cursada.carrera_id', $carrerasId);
         }
 
         if ($statusId != null) {
             $queryBuilder->where('solicitudes.status_id', '=', $statusId);
+        }
+
+        if ($search != null) {
+            $queryBuilder->where(
+                DB::raw('CONCAT(usuarios.nombre, " ", alumnos.numero_control)'),
+                'LIKE',
+                '%'.$search.'%'
+            );
         }
 
         $solicitudes = $queryBuilder->paginate();
@@ -100,14 +116,14 @@ class SolicitudesController extends Controller
             ])
             ->where('solicitudes.solicitud_id', '=', $solicitudId)
             ->join('alumnos', 'solicitudes.numero_control', '=', 'alumnos.numero_control')
-            ->join('usuarios', 'alumnos.usuario_id', '=', 'alumnos.usuario_id')
+            ->join('usuarios', 'alumnos.usuario_id', '=', 'usuarios.id')
             ->join('planes_estudio', 'alumnos.plan_estudio_id', '=', 'planes_estudio.clave')
             ->join('carreras as carrera_convalidar', 'solicitudes.carrera_id', '=', 'carrera_convalidar.carrera_id')
             ->join('carreras as carrera_cursada', 'planes_estudio.carrera_id', '=', 'carrera_cursada.carrera_id')
             ->join('status', 'solicitudes.status_id', '=', 'status.status_id')
             ->join('solicitudes_historial', function ($join) {
                 $join->on('solicitudes_historial.solicitud_id', '=', 'solicitudes.solicitud_id')
-                    ->where('solicitudes_historial.status_id', '=', 'registrada');
+                    ->where('solicitudes_historial.status_id', '=', 'pendiente');
             })
             ->first();
 
@@ -122,7 +138,7 @@ class SolicitudesController extends Controller
     {
         $userId = auth()->id();
         $alumno = Alumno::query()->where('usuario_id', '=', $userId)->first();
-        $statusId = 'registrada';
+        $statusId = 'pendiente';
 
         $carreraId = $request->get('carrera_id');
 

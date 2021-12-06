@@ -14,11 +14,6 @@ class StatusSeeder extends Seeder
         Status::query()->delete();
 
         Status::create([
-            'status_id' => 'registrada',
-            'nombre'    => 'Registrada'
-        ]);
-
-        Status::create([
             'status_id' => 'cancelada',
             'nombre'    => 'Cancelada'
         ]);

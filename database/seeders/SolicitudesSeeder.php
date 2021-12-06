@@ -34,7 +34,7 @@ class SolicitudesSeeder extends Seeder
         $carreras = Carrera::query()->get();
 
         foreach ($alumnos as $alumno) {
-            $statusId = 'registrada';
+            $statusId = 'pendiente';
             $carreraConvalidar = $carreras->where('carrera_id', '<>', $alumno->carrera_id)->random();
 
             $solicitud = Solicitud::query()->create([
