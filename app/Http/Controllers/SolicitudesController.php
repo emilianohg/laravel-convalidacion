@@ -60,6 +60,14 @@ class SolicitudesController extends Controller
                 ->toArray();
         }
 
+        if ($user->rol_id == 'academia' && $carrerasId == null) {
+            $carrerasId = DB::table('academias')
+                ->where('academias.usuario_id', '=', $user->id)
+                ->get()
+                ->map(fn ($academia) => $academia->carrera_id)
+                ->toArray();
+        }
+
         $queryBuilder = Solicitud::query()
             ->select([
                 'solicitudes.solicitud_id',
@@ -85,7 +93,11 @@ class SolicitudesController extends Controller
             });
 
         if ($carrerasId != null) {
-            $queryBuilder->whereIn('carrera_cursada.carrera_id', $carrerasId);
+            if ($user->rol_id == 'academia') {
+                $queryBuilder->whereIn('carrera_convalidar.carrera_id', $carrerasId);
+            } else {
+                $queryBuilder->whereIn('carrera_cursada.carrera_id', $carrerasId);
+            }
         }
 
         if ($statusId != null) {
@@ -160,6 +172,7 @@ class SolicitudesController extends Controller
             ->join('roles', 'usuarios.rol_id', '=', 'roles.rol_id')
             ->join('status', 'solicitudes_historial.status_id', '=', 'status.status_id')
             ->where('solicitud_id', '=', $solicitudId)
+            ->orderBy('fecha', 'desc')
             ->get();
 
         $solicitud->historial = $historial;
@@ -262,6 +275,46 @@ class SolicitudesController extends Controller
             'solicitud' => $solicitud,
         ]);
 
+    }
+
+    public function solicitarAnalisisAcademico(Request $request) {
+        $user = User::query()->find(auth()->id());
+        $solicitudId = $request->get('solicitud_id');
+        $solicitud = Solicitud::query()->findOrFail($solicitudId);
+
+        if ($solicitud->status_id == 'cancelada') {
+            return response()->json(['message' => 'La solicitud ya es encuentra cancelada'], 422);
+        }
+
+        $coincidenciasRol = collect(['coordinador', 'jefe'])->filter(function ($rol) use ($user) {
+            return $user->rol_id == $rol;
+        })->count();
+
+        if ($coincidenciasRol == 0) {
+            return response()->json(['message' => 'No autorizado'], 422);
+        }
+
+        $statusId = 'en_revision';
+
+        $solicitud->status_id = $statusId;
+        $solicitud->save();
+
+        SolicitudHistorial::query()->create([
+            'solicitud_id' => $solicitudId,
+            'usuario_id' => $user->id,
+            'status_id' => $statusId,
+            'fecha' => now(),
+            'comentario' => null,
+        ]);
+
+        DB::table('analisis_academico')->insert([
+            'solicitud_id' => $solicitudId,
+        ]);
+
+        return response()->json([
+            'message'   => 'Solicitud cancelada',
+            'solicitud' => $solicitud,
+        ]);
     }
 
 }

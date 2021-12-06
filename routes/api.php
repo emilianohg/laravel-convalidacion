@@ -21,6 +21,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('alumnos/{numero_control}', [AlumnosController::class, 'show']);
     Route::get('solicitudes', [SolicitudesController::class, 'index']);
     Route::put('solicitudes/cancelar', [SolicitudesController::class, 'cancel']);
+    Route::put('solicitudes/solicitar_analisis', [SolicitudesController::class, 'solicitarAnalisisAcademico']);
     Route::get('solicitudes/{solicitud_id}', [SolicitudesController::class, 'show']);
     Route::post('solicitudes', [SolicitudesController::class, 'store']);
     Route::post('logout', LogoutController::class);

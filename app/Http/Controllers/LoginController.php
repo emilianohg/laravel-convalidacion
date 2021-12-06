@@ -44,7 +44,7 @@ class LoginController extends Controller
                 ->map(fn ($_carrera) => $_carrera->carrera_id)
                 ->toArray();
 
-            $response['carreras'] = $carreras;
+            $response['carreras_id'] = $carreras;
         }
 
         if ($user->rol_id == 'coordinador') {

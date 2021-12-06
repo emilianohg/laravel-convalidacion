@@ -24,7 +24,7 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
-            'status_id' => 'revisando',
+            'status_id' => 'en_revision',
             'nombre'    => 'En revisión'
         ]);
 
@@ -36,6 +36,11 @@ class StatusSeeder extends Seeder
         Status::create([
             'status_id' => 'aprobada',
             'nombre'    => 'Aprobada'
+        ]);
+
+        Status::create([
+            'status_id' => 'rechazada',
+            'nombre'    => 'Rechazada'
         ]);
 
     }
