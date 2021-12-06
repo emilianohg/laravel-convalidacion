@@ -1,4 +1,4 @@
-GET http://localhost:8000/api/alumnos/12836580
+GET http://localhost:8000/api/solicitudes/2
 Accept: application/json
 Content-Type: application/json
 Authorization: Bearer 7|9r77rEOb6lmMc3QOwu16ufOzGuKCevjY8Is0Zs0Q

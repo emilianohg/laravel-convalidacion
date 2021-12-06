@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Utils\ValidarUtils;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -45,7 +46,7 @@ class AlumnosController extends Controller
             $queryBuilder->where('usuarios.nombre', 'LIKE', '%'.$nombre.'%');
         }
 
-        $alumnos = $queryBuilder->paginate();
+        $alumnos = $queryBuilder->paginate(50);
 
         return response()->json($alumnos);
     }
@@ -74,7 +75,7 @@ class AlumnosController extends Controller
             if ($alumnoPorUsuarioId->numero_control != $numeroControl) {
                 return response()->json([
                     'message'   => 'No puedes acceder a los datos de otro alumno',
-                ],422);
+                ],401);
             }
         }
 
@@ -87,6 +88,8 @@ class AlumnosController extends Controller
             'carreras.nombre as carrera',
             'alumnos.plan_estudio_id as clave_plan_estudio',
             'alumnos.semestre',
+            'solicitudes.solicitud_id',
+            DB::raw('IF(solicitudes.solicitud_id IS NULL, 0, 1) as tiene_solicitud'),
             DB::raw('SUM(asignaturas.creditos) as total_creditos'),
             DB::raw('planes_estudio.total_creditos - SUM(asignaturas.creditos) as creditos_restantes'),
             DB::raw('FORMAT(AVG(asignaturas_cursadas.calificacion), 2) as promedio_general'),
@@ -99,6 +102,7 @@ class AlumnosController extends Controller
             ->join('carreras', 'planes_estudio.carrera_id', '=', 'carreras.carrera_id')
             ->join('asignaturas_cursadas', 'alumnos.numero_control', '=', 'asignaturas_cursadas.numero_control')
             ->join('asignaturas', 'asignaturas_cursadas.asignatura_id', '=', 'asignaturas.asignatura_id')
+            ->leftJoin('solicitudes', 'alumnos.numero_control', '=', 'solicitudes.numero_control')
             ->where('alumnos.numero_control', '=', $numeroControl)
             ->groupBy([
                 'alumnos.usuario_id',
@@ -110,13 +114,27 @@ class AlumnosController extends Controller
                 'alumnos.plan_estudio_id',
                 'alumnos.semestre',
                 'planes_estudio.total_creditos',
+                'solicitudes.solicitud_id',
             ])
             ->withCasts([
                 'total_creditos' => 'integer',
                 'creditos_restantes' => 'integer',
                 'promedio_general' => 'double',
+                'tiene_solicitud' => 'boolean',
             ])
             ->first();
+
+
+
+        if ($user->rol_id == 'coordinador') {
+            $esValido = ValidarUtils::validarCoordinacion($user, $alumno->carrera_id);
+
+            if (!$esValido) {
+                return response()->json([
+                    'message' => 'No tienes acceso a este alumno',
+                ], 401);
+            }
+        }
 
         $asignaturasCursadas = Alumno::query()
             ->select([

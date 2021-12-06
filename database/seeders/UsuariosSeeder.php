@@ -6,6 +6,7 @@ use App\Models\Carrera;
 use Illuminate\Database\Seeder;
 
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 class UsuariosSeeder extends Seeder
 {
@@ -25,11 +26,16 @@ class UsuariosSeeder extends Seeder
         $carreras = Carrera::query()->get();
 
         foreach ($carreras as $carrera) {
-            User::query()->create([
+            $userAcademia = User::query()->create([
                 'nombre'    => 'Academia de ' . $carrera->nombre,
                 'email'     => 'academia'.strtolower($carrera->carrera_id).'@itculiacan.edu.mx',
                 'password'  => bcrypt('password'),
                 'rol_id'    => 'academia',
+            ]);
+
+            DB::table('academias')->insert([
+                'usuario_id' => $userAcademia->id,
+                'carrera_id' => $carrera->carrera_id,
             ]);
         }
 
