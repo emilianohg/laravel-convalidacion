@@ -1,0 +1,4 @@
+GET http://localhost:8000/api/coordinadores
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 3|0X3wMmP2bD3kHt7Zq2zbZekQ3weodfDI4mXmyjU7

@@ -1,0 +1,16 @@
+# Filtrado por plan de estudio
+GET http://localhost:8000/api/asignaturas
+Accept: application/json
+Content-Type: application/json
+
+
+# Filtrado por clave de plan de estudio
+GET http://localhost:8000/api/asignaturas?clave_plan_estudio=PLANIAMB
+Accept: application/json
+Content-Type: application/json
+
+
+# Filtrado por vigencia
+GET http://localhost:8000/api/asignaturas?es_vigente=1
+Accept: application/json
+Content-Type: application/json

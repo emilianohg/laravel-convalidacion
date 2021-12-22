@@ -1,0 +1,9 @@
+# Crear solicitud
+POST http://localhost:8000/api/solicitudes
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|rQHTD2kRmf5IFH4547i9nNQ28GBGM8mShCtePIpO
+
+{
+  "carrera_id": "ITIC"
+}

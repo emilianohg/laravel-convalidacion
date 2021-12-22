@@ -1,19 +1,30 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\AlumnosController;
+use App\Http\Controllers\AsignaturasController;
+use App\Http\Controllers\CarrerasController;
+use App\Http\Controllers\CoordinadoresController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\SolicitudesController;
+
+use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('status', StatusController::class);
+    Route::get('carreras', [CarrerasController::class, 'index']);
+    Route::get('asignaturas', [AsignaturasController::class, 'index']);
+    Route::get('coordinadores', [CoordinadoresController::class, 'index']);
+    Route::get('alumnos', [AlumnosController::class, 'index']);
+    Route::get('alumnos/me', [AlumnosController::class, 'me']);
+    Route::get('alumnos/{numero_control}', [AlumnosController::class, 'show']);
+    Route::get('solicitudes', [SolicitudesController::class, 'index']);
+    Route::put('solicitudes/cancelar', [SolicitudesController::class, 'cancel']);
+    Route::put('solicitudes/solicitar_analisis', [SolicitudesController::class, 'solicitarAnalisisAcademico']);
+    Route::get('solicitudes/{solicitud_id}', [SolicitudesController::class, 'show']);
+    Route::post('solicitudes', [SolicitudesController::class, 'store']);
+    Route::post('logout', LogoutController::class);
 });
+
+Route::post('login', LoginController::class);

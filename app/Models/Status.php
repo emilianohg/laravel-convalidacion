@@ -14,6 +14,8 @@ class Status extends Model
 
     protected $primaryKey = 'status_id';
 
+    public $incrementing = false;
+
     protected $fillable = ['status_id', 'nombre'];
 
     public $timestamps = false;

@@ -14,11 +14,6 @@ class StatusSeeder extends Seeder
         Status::query()->delete();
 
         Status::create([
-            'status_id' => 'registrada',
-            'nombre'    => 'Registrada'
-        ]);
-
-        Status::create([
             'status_id' => 'cancelada',
             'nombre'    => 'Cancelada'
         ]);
@@ -29,7 +24,7 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
-            'status_id' => 'revisando',
+            'status_id' => 'en_revision',
             'nombre'    => 'En revisión'
         ]);
 
@@ -41,6 +36,11 @@ class StatusSeeder extends Seeder
         Status::create([
             'status_id' => 'aprobada',
             'nombre'    => 'Aprobada'
+        ]);
+
+        Status::create([
+            'status_id' => 'rechazada',
+            'nombre'    => 'Rechazada'
         ]);
 
     }

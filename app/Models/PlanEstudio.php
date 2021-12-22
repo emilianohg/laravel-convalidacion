@@ -11,6 +11,8 @@ class PlanEstudio extends Model
 
     protected $primaryKey = 'clave';
 
+    public $incrementing = false;
+
     protected $fillable = ['clave', 'carrera_id', 'total_creditos', 'es_vigente'];
 
     public $timestamps = false;

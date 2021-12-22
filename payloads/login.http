@@ -1,0 +1,10 @@
+# Login
+POST http://localhost:8000/api/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "coormecanica@itculiacan.edu.mx",
+  "password": "password",
+  "device": "browser"
+}

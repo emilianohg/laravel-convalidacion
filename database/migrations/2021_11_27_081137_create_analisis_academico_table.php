@@ -11,8 +11,8 @@ class CreateAnalisisAcademicoTable extends Migration
         Schema::create('analisis_academico', function (Blueprint $table) {
             $table->id('analisis_academico_id');
             $table->unsignedBigInteger('solicitud_id');
-            $table->unsignedBigInteger('evaluado_por');
-            $table->unsignedBigInteger('autorizado_por');
+            $table->unsignedBigInteger('evaluado_por')->nullable();
+            $table->unsignedBigInteger('autorizado_por')->nullable();
 
             $table->foreign('solicitud_id')
                 ->references('solicitud_id')
